@@ -1,0 +1,22 @@
+type Article {
+  _id: String!
+  name: String!
+  description: String!
+  summary: String!
+  slug: String
+}
+
+type Query {
+  article(_id: String!): Article
+  articles: [Article!]!
+}
+
+input NewArticle {
+  name: String!
+  description: String!
+  summary: String!
+  slug: String
+}
+type Mutation {
+  createArticle(input: NewArticle): Article!
+}
