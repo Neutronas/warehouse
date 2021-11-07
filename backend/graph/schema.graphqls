@@ -1,22 +1,29 @@
-type Article {
+type Location {
+  name: String
+  lat: Float
+  lng: Float
+}
+
+type Warehouse {
   _id: String!
   name: String!
-  description: String!
-  summary: String!
-  slug: String
+  description: String
+  location: Location
 }
 
 type Query {
-  article(_id: String!): Article
-  articles: [Article!]!
+  warehouse(_id: String!): Warehouse
+  warehouses: [Warehouse!]!
 }
 
-input NewArticle {
+input NewWarehouse {
   name: String!
-  description: String!
-  summary: String!
-  slug: String
+  description: String
+  locationName: String
+  lat: Float
+  lng: Float
 }
+
 type Mutation {
-  createArticle(input: NewArticle): Article!
+  createWarehouse(input: NewWarehouse): Warehouse!
 }

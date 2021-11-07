@@ -7,8 +7,8 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/neutronas/warehouse-be/graph"
-	"github.com/neutronas/warehouse-be/graph/generated"
+	"github.com/neutronas/warehouse/backend/graph"
+	"github.com/neutronas/warehouse/backend/graph/generated"
 )
 
 const defaultPort = "8080"
