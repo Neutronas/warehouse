@@ -12,11 +12,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-type LocationType struct {
-	name string
-	lat float32
-	lng float32
-}
 type DB struct {
 	client *mongo.Client
 }
@@ -24,7 +19,7 @@ type DB struct {
 func Connect() *DB {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb://localhost:27017"))
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb://root:example@localhost:27017/"))
 	if err != nil {
 		log.Fatal(err)
 	}
